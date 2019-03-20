@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    image: docker-mongoose_express_todo
+    build: ./
+    command: node server.js
+    ports:
+      -"3000:3000"
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      -"mongo"
+  mongo:
+    image: "mongo"
+    ports:
+      -"27017:27017"
