@@ -1,5 +1,5 @@
 const express = require('express');
-const mustacheExpress = require('mustache-express'); // view engine
+const mustacheExpress = require('mustache-express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const routes = require('./routes/routes')
@@ -16,9 +16,9 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 const mustacheExpressInstance = mustacheExpress();
-mustacheExpressInstance.cache = null;   // this is so we can make changes in future
+mustacheExpressInstance.cache = null;
 app.engine('mustache', mustacheExpressInstance);
-app.set('view engine', 'mustache'); // for the view engine any file with a mustache extension will be considered a template
+app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
 
 app.use('/', routes);
