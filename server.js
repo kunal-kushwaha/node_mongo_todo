@@ -7,6 +7,7 @@ const routes = require('./routes/routes')
 mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost:27017/mongoose_express_todos', {
+// mongoose.connect('mongodb://mongo:27017/mongoose_express_todos', {
     // useMongoClient: true,
     useNewUrlParser: true
 }).then(() => {
