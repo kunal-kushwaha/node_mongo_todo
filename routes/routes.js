@@ -34,7 +34,7 @@ router.post('/todos/:id/completed', (req, res) => {
     Todo.findById(todoID).exec().then((result) => {
         result.done = !result.done;
         return result.save();
-    }).then((result) => {
+    }).then(() => {
         res.redirect('/');
     });
 });

@@ -7,6 +7,7 @@ const routes = require('./routes/routes')
 mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://mongo:27017/mongoose_express_todos', {
+    // mongo in above url is the container
     useNewUrlParser: true
 }).then(() => {
     console.log('Database connected')

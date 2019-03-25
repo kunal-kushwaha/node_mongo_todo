@@ -11,4 +11,5 @@ let todoSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Todo', todoSchema);
+module.exports = mongoose.model('Todo', todoSchema);    // mongodb will change this Todo to todos
+// this Todo is a collection
